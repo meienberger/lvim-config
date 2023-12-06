@@ -30,7 +30,7 @@ lvim.builtin.which_key.mappings["u"] = {
   c = { ":%bd|e#|bd#<cr>", "Close all tabs" }
 }
 lvim.builtin.which_key.mappings['s']['r'] = { "<cmd>Telescope resume<cr>", "Resume search" }
-
+lvim.builtin.dap.active = true
 
 local cmp_mapping = require("cmp.config.mapping")
 lvim.builtin.cmp.mapping["¬"] = cmp_mapping.complete()
@@ -136,52 +136,6 @@ code_actions.setup {
 }
 
 -- Additional Plugins
-lvim.plugins = {
-  {
-    "sindrets/diffview.nvim",
-    event = "BufRead",
-  },
-
-  {
-    "wuelnerdotexe/vim-astro"
-  },
-  {
-    "pantharshit00/vim-prisma",
-    ft = { "prisma" },
-  },
-  {
-    "iamcco/markdown-preview.nvim",
-    build = "cd app && npm install",
-    ft = "markdown",
-    config = function()
-      vim.g.mkdp_auto_start = 1
-    end,
-  }
-}
-
-table.insert(lvim.plugins, {
-  "zbirenbaum/copilot-cmp",
-  event = "InsertEnter",
-  dependencies = { "zbirenbaum/copilot.lua" },
-  config = function()
-    vim.defer_fn(function()
-      require("copilot").setup({
-        suggestion = {
-          enabled = true,
-          auto_trigger = true,
-          keymap = {
-            accept = "<C-f>"
-          }
-        },
-        filetypes = {
-          markdown = true,
-          sql = true,
-          yaml = true,
-          typescript = true,
-          mdx = true,
-        }
-      })
-      require("copilot_cmp").setup()
-    end, 100)
-  end,
-})
+reload "user.plugins"
+reload "user.dap"
+reload "user.copilot"
