@@ -139,3 +139,4 @@ code_actions.setup {
 reload "user.plugins"
 reload "user.dap"
 reload "user.copilot"
+reload "user.image"

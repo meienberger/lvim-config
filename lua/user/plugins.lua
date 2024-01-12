@@ -3,7 +3,6 @@ lvim.plugins = {
     "sindrets/diffview.nvim",
     event = "BufRead",
   },
-
   {
     "wuelnerdotexe/vim-astro"
   },
@@ -26,5 +25,15 @@ lvim.plugins = {
   {
     "microsoft/vscode-js-debug",
     build = "npm i && npm run compile vsDebugServerBundle && mv dist out"
+  },
+  {
+    -- Image Preview
+    "samodostal/image.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" }
+  },
+  {
+    -- Text Colorizer
+    "m00qek/baleia.nvim",
+    version = "v1.3.0"
   }
 }
