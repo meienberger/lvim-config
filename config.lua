@@ -70,15 +70,6 @@ require("lvim.lsp.manager").setup("intelephense", lsp_settings)
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   {
-    exe = "eslint_d",
-    filetypes = {
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact",
-    },
-  },
-  {
     exe = "prettier",
     filetypes = {
       "javascript",
@@ -90,6 +81,7 @@ formatters.setup {
       "json",
       "yaml",
       "markdown",
+      "mdx"
     },
   },
   {
@@ -117,6 +109,7 @@ linters.setup {
       "javascriptreact",
       "typescript",
       "typescriptreact",
+      "json",
     },
   },
 }
@@ -125,12 +118,13 @@ linters.setup {
 local code_actions = require "lvim.lsp.null-ls.code_actions"
 code_actions.setup {
   {
-    exe = "eslint_d",
+    exe = "eslint",
     filetypes = {
       "javascript",
       "javascriptreact",
       "typescript",
       "typescriptreact",
+      "json",
     },
   },
 }
