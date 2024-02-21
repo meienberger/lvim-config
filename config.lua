@@ -109,7 +109,6 @@ linters.setup {
       "javascriptreact",
       "typescript",
       "typescriptreact",
-      "json",
     },
   },
 }
@@ -118,7 +117,7 @@ linters.setup {
 local code_actions = require "lvim.lsp.null-ls.code_actions"
 code_actions.setup {
   {
-    exe = "eslint",
+    exe = "eslint_d",
     filetypes = {
       "javascript",
       "javascriptreact",
